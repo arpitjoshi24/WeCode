@@ -14,20 +14,7 @@ export default function Navbar() {
             {/* Space logo: simple rocket SVG */}
             <div className="flex-shrink-0">
               <div className="w-10 h-10 bg-gradient-to-tr from-indigo-400 to-sky-300 rounded-full flex items-center justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 2C13.1046 2 14 2.89543 14 4V7.58579L17.2929 10.8787C18.6834 12.2692 18.6834 14.4308 17.2929 15.8213L14 19.1142V22C14 23.1046 13.1046 24 12 24C10.8954 24 10 23.1046 10 22V19.1142L6.70711 15.8213C5.31658 14.4308 5.31658 12.2692 6.70711 10.8787L10 7.58579V4C10 2.89543 10.8954 2 12 2Z"
-                  />
-                </svg>
+               <img src="./logo.jpeg" alt="" />
               </div>
             </div>
             <span className="text-xl font-bold tracking-tight">WeCode</span>
