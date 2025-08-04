@@ -8,23 +8,23 @@ const roles = [
     title: "Web Development",
     icon: <Code size={24} />,
     description:
-      "Build the club's digital presence—landing pages, dashboards, and interactive experiences.",
+      "Build the club's digital presence—landing pages, dashboards, and interactive experiences.Work on real projects using modern web technologies.",
     color: "from-[#6366f1] to-[#3b82f6]",
   },
   {
     id: "aiml",
-    title: "AI / ML",
+    title: "AI/ML",
     icon: <Brain size={24} />,
     description:
-      "Work on intelligent features, recommendation systems, and smart automation for projects.",
+      "Explore machine learning by building smart, data-driven features and AI prototypes.Contribute to research-based projects and hands-on workshops.",
     color: "from-[#10b981] to-[#06b6d4]",
   },
   {
     id: "dsa",
-    title: "DSA & Algorithms",
+    title: "Data Structures & Algorithms",
     icon: <Zap size={24} />,
     description:
-      "Optimize logic, design problem-solving workshops, and help members level up algorithmic thinking.",
+      "Strengthen core programming logic through hands-on sessions and challenges.Host workshops and help peers crack technical interviews.",
     color: "from-[#f59e0b] to-[#f43f5e]",
   },
   {
@@ -32,7 +32,7 @@ const roles = [
     title: "Competitive Programming",
     icon: <Cpu size={24} />,
     description:
-      "Organize contests, prepare resources, and mentor peers for coding competitions.",
+      "Prepare for coding contests with structured practice and peer mentoring.Organize campus-level competitions and curate problems.",
     color: "from-[#8b5cf6] to-[#6366f1]",
   },
 ];
