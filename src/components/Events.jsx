@@ -1,6 +1,6 @@
-
 import { useState, useMemo } from "react";
 import { CalendarDays, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 // Utility to format date
 function formatDate(dt) {
@@ -12,7 +12,7 @@ function formatDate(dt) {
   });
 }
 
-// Sample events (replace with real fetch/data)
+// Sample events
 const sampleEvents = [
   {
     id: 1,
@@ -36,53 +36,77 @@ const sampleEvents = [
     id: 3,
     title: "Codethon – Hack the Spring",
     description:
-      "A coding sprint where students tackled problem-solving challenges under time pressure. Part of our Hack the Spring event series.",
+      "A coding sprint where students tackled problem-solving challenges under time pressure.",
     date: "2025-04-22T18:00:00",
     type: "past",
     link: "#",
-    image: "/e2.JPG"
+    image: "/e2.JPG",
   },
   {
     id: 4,
     title: "Hackathon – Hack the Spring",
     description:
-      "Teams collaborated to build creative tech solutions in 24 hours. Innovation, teamwork, and caffeine powered this thrilling event.",
+      "Teams collaborated to build creative tech solutions in 24 hours.",
     date: "2025-04-23T14:00:00",
     type: "past",
     link: "#",
-    image: "/public/e3.JPG"
+    image: "./e3.jpg",
   },
+  {
+  id: 5,
+  title: "Induction Program",
+  description:
+    "Welcome session for new members with club orientation, core intro, and ice-breaking games.",
+  date: "2025-04-15T10:00:00",
+  type: "past",
+  link: "#",
+  image: "./e1.JPG", // replace with your actual image path
+}
+,{
+  id: 6,
+  title: "Open Book Challenge",
+  description: "An open-book coding challenge that tests logic, not memory. Think, search, and solve!",
+  date: "2025-04-18T11:00:00",
+  type: "past",
+  link: "#",
+  image: "/e2.JPG" // replace with your actual image path if available
+},
+,{
+  id: 6,
+  title: "Open Book Challenge",
+  description: "An open-book coding challenge that tests logic, not memory. Think, search, and solve!",
+  date: "2025-04-18T11:00:00",
+  type: "past",
+  link: "#",
+  image: "/e2.JPG" // replace with your actual image path if available
+}
+
+
 ];
 
 export default function Events() {
-  const [tab, setTab] = useState("upcoming"); // "upcoming" or "past"
+  const [tab, setTab] = useState("upcoming");
   const [search, setSearch] = useState("");
 
-  // Filtered list
   const filtered = useMemo(() => {
     const now = new Date();
     return sampleEvents
-      .filter((e) => {
-        if (tab === "upcoming") return new Date(e.date) >= now;
-        else return new Date(e.date) < now;
-      })
+      .filter((e) => (tab === "upcoming" ? new Date(e.date) >= now : new Date(e.date) < now))
       .filter((e) => e.title.toLowerCase().includes(search.trim().toLowerCase()));
   }, [tab, search]);
 
   return (
-    <div className="pt-24 pb-16 bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#3b82f6] min-h-screen text-white">
+    <div id="events" className="pt-24 pb-16 bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#3b82f6] min-h-screen text-white">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-8">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-10">
           <div>
-            <h2 className="text-3xl font-bold">Events</h2>
+            <h2 className="text-3xl font-bold">Events Timeline</h2>
             <p className="mt-1 text-sm text-white/80">
-              Stay in the loop — upcoming workshops, hackathons, and meetups.
+              Scroll through the journey of our workshops, hackathons, and meetups.
             </p>
           </div>
-
-          {/* Controls */}
-          <div className="flex flex-wrap gap-3 items-center">
+          <div className="flex gap-3 flex-wrap items-center">
             {/* Tabs */}
             <div className="flex rounded-full bg-white/10 p-1">
               {["upcoming", "past"].map((t) => (
@@ -116,69 +140,54 @@ export default function Events() {
           </div>
         </div>
 
-        {/* Event grid */}
+        {/* Timeline */}
         {filtered.length === 0 ? (
           <div className="mt-16 text-center">
             <p className="text-lg">No {tab} events match your search.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((e) => (
-              <div
-                key={e.id}
-                className="relative flex flex-col justify-between bg-white/5 rounded-2xl overflow-hidden shadow-xl hover:scale-[1.01] transition"
-              >
-                {/* Event Image (for past events) */}
-                {e.type === "past" && e.image && (
-                  <div className="h-48 overflow-hidden">
-                    <img 
-                      src={e.image} 
-                      alt={e.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                )}
-                
-                <div className="p-6 flex flex-col justify-between flex-grow">
-                  <div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="bg-sky-400/30 p-2 rounded-full">
-                        <CalendarDays size={20} />
-                      </div>
-                      <div>
-                        <p className="text-xs uppercase tracking-wide text-white/70">
-                          {e.type === "upcoming" ? "Upcoming" : "Past"}
-                        </p>
-                        <h3 className="text-xl font-semibold">{e.title}</h3>
-                      </div>
-                    </div>
-                    <p className="text-sm text-white/80 mb-4">{e.description}</p>
-                  </div>
-                  <div className="mt-4 flex items-center justify-between">
-                    <div className="text-xs text-white/70">
-                      <span className="font-medium">{formatDate(e.date)}</span>
-                    </div>
+      <div className="overflow-x-auto scrollbar-hide">
+  
+
+            <div className="relative flex gap-16 px-6 py-8 min-w-[800px] w-fit border-t-2 border-white/30">
+              {filtered.map((e, i) => (
+                <motion.div
+                  key={e.id}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.15 }}
+                  className="relative flex flex-col items-center text-center min-w-[250px]"
+                >
+                  {/* Dot on the timeline */}
+             <div className="text-sm text-white/70 mb-2">{formatDate(e.date)}</div>
+
+                  {/* Card */}
+                  <div className="bg-white/10 rounded-xl p-4 shadow-lg backdrop-blur-lg">
+                    {e.type === "past" && e.image && (
+                      <img
+                        src={e.image}
+                        alt={e.title}
+                        className="w-full h-32 object-cover rounded-md mb-2"
+                      />
+                    )}
+                    <h3 className="text-lg font-semibold">{e.title}</h3>
+                    <p className="text-sm text-white/80 mt-1">{e.description}</p>
+                    <div className="text-xs mt-2 text-white/60">{formatDate(e.date)}</div>
                     {e.type === "upcoming" && (
                       <a
                         href={e.link}
-                        className="inline-flex items-center gap-1 text-sm font-semibold bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 py-2 rounded-full shadow hover:brightness-105 transition"
+                        className="mt-3 inline-flex items-center gap-1 text-sm font-semibold bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 py-2 rounded-full shadow hover:brightness-105 transition"
                       >
                         Register <ArrowRight size={16} />
                       </a>
                     )}
                   </div>
-                </div>
-              </div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
         )}
-
-        {/* Load more placeholder */}
-        <div className="mt-12 text-center">
-          <button className="px-6 py-3 bg-white text-[#1e3a8a] font-semibold rounded-full shadow hover:brightness-105 transition">
-            Load More Events
-          </button>
-        </div>
       </div>
     </div>
   );
