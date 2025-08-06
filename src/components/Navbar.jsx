@@ -91,7 +91,7 @@ export default function Navbar() {
           </a>
          
           <a
-            href="https://discord.com"
+            href="https://discord.gg/dk25zDfk"
             target="_blank"
             rel="noopener noreferrer"
             className="block mt-2 px-4 py-2 bg-white text-[#1e3a8a] font-semibold rounded-full text-center"
