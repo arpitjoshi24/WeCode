@@ -12,7 +12,7 @@ function formatDate(dt) {
   });
 }
 
-// Sample events
+// Fixed sample events (no duplicates, all IDs unique)
 const sampleEvents = [
   {
     id: 1,
@@ -53,35 +53,25 @@ const sampleEvents = [
     image: "./e3.jpg",
   },
   {
-  id: 5,
-  title: "Induction Program",
-  description:
-    "Welcome session for new members with club orientation, core intro, and ice-breaking games.",
-  date: "2025-04-15T10:00:00",
-  type: "past",
-  link: "#",
-  image: "./e1.JPG", // replace with your actual image path
-}
-,{
-  id: 6,
-  title: "Open Book Challenge",
-  description: "An open-book coding challenge that tests logic, not memory. Think, search, and solve!",
-  date: "2025-04-18T11:00:00",
-  type: "past",
-  link: "#",
-  image: "/e2.JPG" // replace with your actual image path if available
-},
-,{
-  id: 6,
-  title: "Open Book Challenge",
-  description: "An open-book coding challenge that tests logic, not memory. Think, search, and solve!",
-  date: "2025-04-18T11:00:00",
-  type: "past",
-  link: "#",
-  image: "/e2.JPG" // replace with your actual image path if available
-}
-
-
+    id: 5,
+    title: "Induction Program",
+    description:
+      "Welcome session for new members with club orientation, core intro, and ice-breaking games.",
+    date: "2025-04-15T10:00:00",
+    type: "past",
+    link: "#",
+    image: "./e1.JPG",
+  },
+  {
+    id: 6,
+    title: "Open Book Challenge",
+    description:
+      "An open-book coding challenge that tests logic, not memory. Think, search, and solve!",
+    date: "2025-04-18T11:00:00",
+    type: "past",
+    link: "#",
+    image: "/e2.JPG",
+  }
 ];
 
 export default function Events() {
@@ -91,19 +81,27 @@ export default function Events() {
   const filtered = useMemo(() => {
     const now = new Date();
     return sampleEvents
-      .filter((e) => (tab === "upcoming" ? new Date(e.date) >= now : new Date(e.date) < now))
-      .filter((e) => e.title.toLowerCase().includes(search.trim().toLowerCase()));
+      .filter((e) =>
+        tab === "upcoming" ? new Date(e.date) >= now : new Date(e.date) < now
+      )
+      .filter((e) =>
+        e.title.toLowerCase().includes(search.trim().toLowerCase())
+      );
   }, [tab, search]);
 
   return (
-    <div id="events" className="pt-24 pb-16 bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#3b82f6] min-h-screen text-white">
+    <div
+      id="events"
+      className="pt-24 pb-16 bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#3b82f6] min-h-screen text-white"
+    >
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-10">
           <div>
             <h2 className="text-3xl font-bold">Events Timeline</h2>
             <p className="mt-1 text-sm text-white/80">
-              Scroll through the journey of our workshops, hackathons, and meetups.
+              Scroll through the journey of our workshops, hackathons, and
+              meetups.
             </p>
           </div>
           <div className="flex gap-3 flex-wrap items-center">
@@ -146,9 +144,7 @@ export default function Events() {
             <p className="text-lg">No {tab} events match your search.</p>
           </div>
         ) : (
-      <div className="overflow-x-auto scrollbar-hide">
-  
-
+          <div className="overflow-x-auto scrollbar-hide">
             <div className="relative flex gap-16 px-6 py-8 min-w-[800px] w-fit border-t-2 border-white/30">
               {filtered.map((e, i) => (
                 <motion.div
@@ -159,8 +155,10 @@ export default function Events() {
                   transition={{ duration: 0.5, delay: i * 0.15 }}
                   className="relative flex flex-col items-center text-center min-w-[250px]"
                 >
-                  {/* Dot on the timeline */}
-             <div className="text-sm text-white/70 mb-2">{formatDate(e.date)}</div>
+                  {/* Date */}
+                  <div className="text-sm text-white/70 mb-2">
+                    {formatDate(e.date)}
+                  </div>
 
                   {/* Card */}
                   <div className="bg-white/10 rounded-xl p-4 shadow-lg backdrop-blur-lg">
@@ -172,8 +170,12 @@ export default function Events() {
                       />
                     )}
                     <h3 className="text-lg font-semibold">{e.title}</h3>
-                    <p className="text-sm text-white/80 mt-1">{e.description}</p>
-                    <div className="text-xs mt-2 text-white/60">{formatDate(e.date)}</div>
+                    <p className="text-sm text-white/80 mt-1">
+                      {e.description}
+                    </p>
+                    <div className="text-xs mt-2 text-white/60">
+                      {formatDate(e.date)}
+                    </div>
                     {e.type === "upcoming" && (
                       <a
                         href={e.link}
