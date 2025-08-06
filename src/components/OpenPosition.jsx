@@ -35,6 +35,14 @@ const roles = [
       "Prepare for coding contests with structured practice and peer mentoring.Organize campus-level competitions and curate problems.",
     color: "from-[#8b5cf6] to-[#6366f1]",
   },
+  {
+  id: "cybersecurity",
+  title: "Cyber Security",
+  icon: <Shield size={24} />,
+  description:
+    "Learn about ethical hacking, network security, and secure coding practices. Participate in CTFs and workshops to enhance your skills.",
+  color: "from-[#f97316] to-[#ea580c]",
+}
 ];
 
 export default function OpenPosition() {
