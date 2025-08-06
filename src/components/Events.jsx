@@ -57,7 +57,7 @@ const sampleEvents = [
   title: "Induction Program",
   description:
     "Welcome session for new members with club orientation, core intro, and ice-breaking games.",
-  date: "2025-04-15T10:00:00",
+  date: "2025-08-4",
   type: "past",
   link: "#",
   image: "./e1.JPG", // replace with your actual image path
@@ -66,20 +66,12 @@ const sampleEvents = [
   id: 6,
   title: "Open Book Challenge",
   description: "An open-book coding challenge that tests logic, not memory. Think, search, and solve!",
-  date: "2025-04-18T11:00:00",
+  date: "2025-08-5",
   type: "past",
   link: "#",
   image: "/e2.JPG" // replace with your actual image path if available
 },
-,{
-  id: 6,
-  title: "Open Book Challenge",
-  description: "An open-book coding challenge that tests logic, not memory. Think, search, and solve!",
-  date: "2025-04-18T11:00:00",
-  type: "past",
-  link: "#",
-  image: "/e2.JPG" // replace with your actual image path if available
-}
+
 
 
 ];

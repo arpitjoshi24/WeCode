@@ -34,6 +34,9 @@ export default function Navbar() {
             <a href="#contact" className="hover:underline text-sm font-medium">
               Contact Us
             </a>
+            <a href="https://shorturl.at/fQZIV" className="hover:underline text-sm font-medium">
+              ECertificates
+            </a>
            
             <a
               href="https://discord.com"
