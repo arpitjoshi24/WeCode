@@ -56,10 +56,7 @@ export default function Codethon() {
         <div className={`relative max-w-7xl mx-auto px-6 py-12 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <button className="flex items-center gap-2 text-blue-200 hover:text-white mb-6 transition-all duration-300 hover:translate-x-2 group">
-            <ChevronLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
-            Back to Events
-          </button>
+         
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
