@@ -12,7 +12,7 @@ function formatDate(dt) {
   });
 }
 
-// Fixed sample events (no duplicates, all IDs unique)
+
 const sampleEvents = [
   {
     id: 1,

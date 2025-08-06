@@ -1,6 +1,6 @@
 // OpenPosition.jsx
 import { motion } from "framer-motion";
-import { Code, Cpu, Brain, Zap } from "lucide-react";
+import { Code, Cpu, Brain, Zap,shield } from "lucide-react";
 
 const roles = [
   {
