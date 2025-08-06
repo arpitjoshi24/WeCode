@@ -39,7 +39,7 @@ const sampleEvents = [
       "A coding sprint where students tackled problem-solving challenges under time pressure.",
     date: "2025-04-22T18:00:00",
     type: "past",
-    link: "#",
+    link: "/codethon",
     image: "/e2.JPG",
   },
   {
@@ -49,7 +49,7 @@ const sampleEvents = [
       "Teams collaborated to build creative tech solutions in 24 hours.",
     date: "2025-04-23T14:00:00",
     type: "past",
-    link: "#",
+    link: "/hackathon",
     image: "./e3.jpg",
   },
   {
@@ -59,7 +59,7 @@ const sampleEvents = [
       "Welcome session for new members with club orientation, core intro, and ice-breaking games.",
     date: "2025-04-15T10:00:00",
     type: "past",
-    link: "#",
+    link: "/induction",
     image: "./e1.JPG",
   },
   {
@@ -69,7 +69,7 @@ const sampleEvents = [
       "An open-book coding challenge that tests logic, not memory. Think, search, and solve!",
     date: "2025-04-18T11:00:00",
     type: "past",
-    link: "#",
+    link: "/openbook",
     image: "/e2.JPG",
   }
 ];
@@ -159,32 +159,36 @@ export default function Events() {
                   <div className="text-sm text-white/70 mb-2">
                     {formatDate(e.date)}
                   </div>
+                  {e.type === "past" ? (
+  <a
+    href={e.link}
+    className="bg-white/10 rounded-xl p-4 shadow-lg backdrop-blur-lg block hover:brightness-110 transition"
+  >
+    {e.image && (
+      <img
+        src={e.image}
+        alt={e.title}
+        className="w-full h-32 object-cover rounded-md mb-2"
+      />
+    )}
+    <h3 className="text-lg font-semibold">{e.title}</h3>
+    <p className="text-sm text-white/80 mt-1">{e.description}</p>
+    <div className="text-xs mt-2 text-white/60">{formatDate(e.date)}</div>
+  </a>
+) : (
+  <div className="bg-white/10 rounded-xl p-4 shadow-lg backdrop-blur-lg">
+    <h3 className="text-lg font-semibold">{e.title}</h3>
+    <p className="text-sm text-white/80 mt-1">{e.description}</p>
+    <div className="text-xs mt-2 text-white/60">{formatDate(e.date)}</div>
+    <a
+      href={e.link}
+      className="mt-3 inline-flex items-center gap-1 text-sm font-semibold bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 py-2 rounded-full shadow hover:brightness-105 transition"
+    >
+      Register <ArrowRight size={16} />
+    </a>
+  </div>
+)}
 
-                  {/* Card */}
-                  <div className="bg-white/10 rounded-xl p-4 shadow-lg backdrop-blur-lg">
-                    {e.type === "past" && e.image && (
-                      <img
-                        src={e.image}
-                        alt={e.title}
-                        className="w-full h-32 object-cover rounded-md mb-2"
-                      />
-                    )}
-                    <h3 className="text-lg font-semibold">{e.title}</h3>
-                    <p className="text-sm text-white/80 mt-1">
-                      {e.description}
-                    </p>
-                    <div className="text-xs mt-2 text-white/60">
-                      {formatDate(e.date)}
-                    </div>
-                    {e.type === "upcoming" && (
-                      <a
-                        href={e.link}
-                        className="mt-3 inline-flex items-center gap-1 text-sm font-semibold bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 py-2 rounded-full shadow hover:brightness-105 transition"
-                      >
-                        Register <ArrowRight size={16} />
-                      </a>
-                    )}
-                  </div>
                 </motion.div>
               ))}
             </div>
