@@ -1,32 +1,11 @@
-// import ContactUs from "./components/ContactUs"
-// import Events from "./components/Events"
-// import Hero from "./components/Hero"
-// import Navbar from "./components/Navbar"
-// import OpenPosition from "./components/OpenPosition"
-
-
-// function App() {
-  
-
-//   return (
-//     <>
-//       <Navbar/>
-//       <Hero/>
-//       <Events/>
-//       <OpenPosition/>
-//       <ContactUs/>
-//     </>
-//   )
-// }
-
-// export default App
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ContactUs from "./components/ContactUs"
 import Events from "./components/Events"
 import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
 import OpenPosition from "./components/OpenPosition"
-// Import your page components
+import Resources from "./components/Resources"
+import WebDev from "./components/WebDev";
 import Codethon from "./pages/codethon"
 import Hackathon from "./pages/hackathon"
 import Induction from "./pages/induction"
@@ -34,24 +13,34 @@ import Openbook from "./pages/openbook"
 
 function App() {
   return (
-    <Router>
+    <>
+        <Navbar />
       <Routes>
-        <Route path="/" element={
-          <>
-            <Navbar/>
-            <Hero/>
-            <Events/>
-            <OpenPosition/>
-            <ContactUs/>
-          </>
-        } />
+        {/* Home Page */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <Events />
+              <Resources />
+              <OpenPosition />
+              <ContactUs />
+            </>
+          }
+        />
+
+        {/* Roadmap Pages */}
+        <Route path="/WebDev" element={<WebDev />} />
+        {/* You can add other roadmap pages here in the future */}
         <Route path="/codethon" element={<Codethon />} />
         <Route path="/hackathon" element={<Hackathon />} />
         <Route path="/induction" element={<Induction />} />
         <Route path="/openbook" element={<Openbook />} />
+
       </Routes>
-    </Router>
-  )
+    </>
+  );
 }
 
 export default App
