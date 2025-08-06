@@ -88,7 +88,7 @@ export default function OpenPosition() {
                   {role.title.split(" ").join("-").toLowerCase()}
                 </span>
                 <a
-                  href="#apply"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSeAq5A02UHxWQ8PmGn-GvkxxX5NCx66ES-s2LRKDPxZSKFuHQ/viewform?usp=sharing&ouid=100110423182068132962"
                   className="inline-flex items-center gap-1 text-sm font-semibold bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 py-2 rounded-full shadow hover:scale-[1.03] transition"
                 >
                   Apply
