@@ -172,7 +172,7 @@ export default function ContactUs() {
                     name: "Discord",
                     icon: <DiscordIcon size={20} />,
                     handle: "WeCodeClub",
-                    href: "#",
+                    href: "https://discord.gg/dk25zDfk",
                     bg: "bg-indigo-600/20",
                   },
                   {
