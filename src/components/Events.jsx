@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { CalendarDays, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
+
 // Utility to format date
 function formatDate(dt) {
   const d = new Date(dt);
