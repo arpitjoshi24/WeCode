@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom"; 
 import WebDev from "./WebDev";
+import Ai from "./AI";
 
 const domains = [
   {
@@ -14,7 +15,7 @@ const domains = [
     id: 2,
     title: "AI / Machine Learning",
     description: "Dive into AI concepts, model building, and machine learning workflows.",
-    link: "/resources/ai-ml"
+    link: "/Ai"
   },
   {
     id: 3,
