@@ -17,13 +17,13 @@ export default function Hero() {
         {/* Buttons */}
         <div className="flex flex-wrap justify-center gap-4">
            <a
-            href="#events"
+            href="https://discord.gg/dk25zDfk"
             className="px-6 py-3 bg-sky-500 text-white font-semibold rounded-full shadow hover:bg-sky-400 transition"
           >
             Join Discord
           </a>
           <a
-            href="https://discord.com"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 bg-white text-[#1e3a8a] font-semibold rounded-full shadow hover:brightness-105 transition"
