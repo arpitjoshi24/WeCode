@@ -22,7 +22,7 @@ const sampleEvents = [
       "Gear up for a 24-hour coding sprint. Teams, challenges, and prizes await!",
     date: "2025-09-05T10:00:00",
     type: "upcoming",
-    link: "#",
+    link: "https://forms.google.com/your-hackathon-form-id",  // repace with actual google form url
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const sampleEvents = [
       "Learn version control from basics to advanced workflows with hands-on labs.",
     date: "2025-08-20T15:00:00",
     type: "upcoming",
-    link: "#",
+    link: "https://forms.google.com/your-hackathon-form-id",  // repace with actual google form url,
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ const sampleEvents = [
       "A coding sprint where students tackled problem-solving challenges under time pressure.",
     date: "2025-04-22T18:00:00",
     type: "past",
-    link: "/codethon",
+    link: "https://forms.google.com/your-hackathon-form-id",  // repace with actual google form url
     image: "/e2.JPG",
   },
   {
@@ -50,7 +50,7 @@ const sampleEvents = [
       "Teams collaborated to build creative tech solutions in 24 hours.",
     date: "2025-04-23T14:00:00",
     type: "past",
-    link: "/hackathon",
+    link: "https://forms.google.com/your-hackathon-form-id",  // repace with actual google form url
     image: "./e3.jpg",
   },
   {
@@ -60,7 +60,7 @@ const sampleEvents = [
       "Welcome session for new members with club orientation, core intro, and ice-breaking games.",
     date: "2025-04-15T10:00:00",
     type: "past",
-    link: "/induction",
+    link: "https://forms.google.com/your-hackathon-form-id",  // repace with actual google form url
     image: "./e1.JPG",
   },
   {
@@ -70,7 +70,7 @@ const sampleEvents = [
       "An open-book coding challenge that tests logic, not memory. Think, search, and solve!",
     date: "2025-04-18T11:00:00",
     type: "past",
-    link: "/openbook",
+    link: "https://forms.google.com/your-hackathon-form-id",  // repace with actual google form url
     image: "/e2.JPG",
   }
 ];
@@ -189,7 +189,6 @@ export default function Events() {
     </a>
   </div>
 )}
-
                 </motion.div>
               ))}
             </div>
