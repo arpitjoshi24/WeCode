@@ -53,7 +53,7 @@ export default function Induction() {
                 Induction Program
               </h1>
               <p className="text-xl text-emerald-100/90 mb-6 leading-relaxed">
-                A warm welcome session where 85 new members joined our coding family through engaging orientation, 
+                A warm welcome session where new members joined our coding family through engaging orientation, 
                 personal introductions, and fun ice-breaking activities that sparked instant connections
               </p>
               <div className="flex flex-wrap gap-6 text-sm text-emerald-200/80">

@@ -1,7 +1,7 @@
+
 import { useState, useMemo } from "react";
 import { CalendarDays, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-
 
 // Utility to format date
 function formatDate(dt) {
@@ -13,7 +13,6 @@ function formatDate(dt) {
   });
 }
 
-
 const sampleEvents = [
   {
     id: 1,
@@ -21,7 +20,6 @@ const sampleEvents = [
     description:
       "Gear up for a 24-hour coding sprint. Teams, challenges, and prizes await!",
     date: "2025-09-05T10:00:00",
-    type: "upcoming",
     link: "#",
   },
   {
@@ -30,46 +28,41 @@ const sampleEvents = [
     description:
       "Learn version control from basics to advanced workflows with hands-on labs.",
     date: "2025-08-20T15:00:00",
-    type: "upcoming",
     link: "#",
   },
   {
-    id: 3,
+    id: 6,
     title: "Codethon – Hack the Spring",
     description:
       "A coding sprint where students tackled problem-solving challenges under time pressure.",
     date: "2025-04-22T18:00:00",
-    type: "past",
     link: "/codethon",
     image: "/e2.JPG",
   },
   {
-    id: 4,
+    id: 5,
     title: "Hackathon – Hack the Spring",
     description:
       "Teams collaborated to build creative tech solutions in 24 hours.",
     date: "2025-04-23T14:00:00",
-    type: "past",
     link: "/hackathon",
     image: "./e3.jpg",
   },
   {
-    id: 5,
+    id: 4,
     title: "Induction Program",
     description:
       "Welcome session for new members with club orientation, core intro, and ice-breaking games.",
-    date: "2025-04-15T10:00:00",
-    type: "past",
+    date: "2025-08-04T10:00:00",
     link: "/induction",
     image: "./e1.JPG",
   },
   {
-    id: 6,
+    id: 3,
     title: "Open Book Challenge",
     description:
       "An open-book coding challenge that tests logic, not memory. Think, search, and solve!",
-    date: "2025-04-18T11:00:00",
-    type: "past",
+    date: "2025-08-03T11:00:00",
     link: "/openbook",
     image: "/e2.JPG",
   }
@@ -82,12 +75,20 @@ export default function Events() {
   const filtered = useMemo(() => {
     const now = new Date();
     return sampleEvents
-      .filter((e) =>
-        tab === "upcoming" ? new Date(e.date) >= now : new Date(e.date) < now
-      )
+      .filter((e) => {
+        const eventDate = new Date(e.date);
+        return tab === "upcoming" ? eventDate >= now : eventDate < now;
+      })
       .filter((e) =>
         e.title.toLowerCase().includes(search.trim().toLowerCase())
-      );
+      )
+      .sort((a, b) => {
+        // For upcoming events, show closest dates first (ascending)
+        // For past events, show most recent first (descending)
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
+        return tab === "upcoming" ? dateA - dateB : dateB - dateA;
+      });
   }, [tab, search]);
 
   return (
@@ -147,51 +148,57 @@ export default function Events() {
         ) : (
           <div className="overflow-x-auto scrollbar-hide">
             <div className="relative flex gap-16 px-6 py-8 min-w-[800px] w-fit border-t-2 border-white/30">
-              {filtered.map((e, i) => (
-                <motion.div
-                  key={e.id}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.15 }}
-                  className="relative flex flex-col items-center text-center min-w-[250px]"
-                >
-                  {/* Date */}
-                  <div className="text-sm text-white/70 mb-2">
-                    {formatDate(e.date)}
-                  </div>
-                  {e.type === "past" ? (
-  <a
-    href={e.link}
-    className="bg-white/10 rounded-xl p-4 shadow-lg backdrop-blur-lg block hover:brightness-110 transition"
-  >
-    {e.image && (
-      <img
-        src={e.image}
-        alt={e.title}
-        className="w-full h-32 object-cover rounded-md mb-2"
-      />
-    )}
-    <h3 className="text-lg font-semibold">{e.title}</h3>
-    <p className="text-sm text-white/80 mt-1">{e.description}</p>
-    <div className="text-xs mt-2 text-white/60">{formatDate(e.date)}</div>
-  </a>
-) : (
-  <div className="bg-white/10 rounded-xl p-4 shadow-lg backdrop-blur-lg">
-    <h3 className="text-lg font-semibold">{e.title}</h3>
-    <p className="text-sm text-white/80 mt-1">{e.description}</p>
-    <div className="text-xs mt-2 text-white/60">{formatDate(e.date)}</div>
-    <a
-      href={e.link}
-      className="mt-3 inline-flex items-center gap-1 text-sm font-semibold bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 py-2 rounded-full shadow hover:brightness-105 transition"
-    >
-      Register <ArrowRight size={16} />
-    </a>
-  </div>
-)}
-
-                </motion.div>
-              ))}
+              {filtered.map((e, i) => {
+                const eventDate = new Date(e.date);
+                const now = new Date();
+                const isPastEvent = eventDate < now;
+                
+                return (
+                  <motion.div
+                    key={e.id}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.15 }}
+                    className="relative flex flex-col items-center text-center min-w-[250px]"
+                  >
+                    {/* Date */}
+                    <div className="text-sm text-white/70 mb-2">
+                      {formatDate(e.date)}
+                    </div>
+                    
+                    {isPastEvent ? (
+                      <a
+                        href={e.link}
+                        className="bg-white/10 rounded-xl p-4 shadow-lg backdrop-blur-lg block hover:brightness-110 transition"
+                      >
+                        {e.image && (
+                          <img
+                            src={e.image}
+                            alt={e.title}
+                            className="w-full h-32 object-cover rounded-md mb-2"
+                          />
+                        )}
+                        <h3 className="text-lg font-semibold">{e.title}</h3>
+                        <p className="text-sm text-white/80 mt-1">{e.description}</p>
+                        <div className="text-xs mt-2 text-white/60">{formatDate(e.date)}</div>
+                      </a>
+                    ) : (
+                      <div className="bg-white/10 rounded-xl p-4 shadow-lg backdrop-blur-lg">
+                        <h3 className="text-lg font-semibold">{e.title}</h3>
+                        <p className="text-sm text-white/80 mt-1">{e.description}</p>
+                        <div className="text-xs mt-2 text-white/60">{formatDate(e.date)}</div>
+                        <a
+                          href={e.link}
+                          className="mt-3 inline-flex items-center gap-1 text-sm font-semibold bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 py-2 rounded-full shadow hover:brightness-105 transition"
+                        >
+                          Register <ArrowRight size={16} />
+                        </a>
+                      </div>
+                    )}
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         )}

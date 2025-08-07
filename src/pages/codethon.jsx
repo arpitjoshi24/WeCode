@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, MapPin, Users, Trophy, Code, ChevronLeft, Star, Award, Target, Zap, Eye } from 'lucide-react';
 
