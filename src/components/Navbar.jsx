@@ -85,6 +85,9 @@ export default function Navbar() {
           >
             Open Positions
           </a>
+           <a href="https://shorturl.at/JuvV8" className="hover:underline text-sm font-medium">
+              Ecertificates
+            </a>
           <a
             href="#contact"
             className="block text-base font-medium hover:underline"
