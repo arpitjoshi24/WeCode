@@ -60,7 +60,7 @@ const sampleEvents = [
       "Welcome session for new members with club orientation, core intro, and ice-breaking games.",
     date: "2025-04-15T10:00:00",
     type: "past",
-    link: "/induction",  /
+    link: "/induction", 
     image: "./e1.JPG",
   },
   {
