@@ -72,7 +72,7 @@ const AboutUs = () => {
           className="text-center"
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white">
-            WeCode - Showcase Your Skills
+            About Us
           </h2>
           <p className="mt-4 text-lg text-white/80 max-w-3xl mx-auto">
             Welcome to We Code, where tech meets excellence! As the biggest and most vibrant club in the college, we are a passionate community of students on a mission to ignite the tech culture and empower our peers to reach new heights. Our core values revolve around fostering a love for coding and honing cutting-edge skills. We are here to inspire and motivate you every step of the way, providing a platform to learn from the best and grow alongside accomplished peers who have already made their mark in the field. Join us to unlock your potential, code, create, design, and conquer together!
