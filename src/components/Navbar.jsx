@@ -28,6 +28,9 @@ export default function Navbar() {
               <a href="#resources" className="hover:underline text-sm font-medium">
               Resource Material
             </a>
+            <a href="#about-us" className="hover:underline text-sm font-medium">
+              About Us
+            </a>
             <a href="#openposition" className="hover:underline text-sm font-medium">
               Open Positions
             </a>
@@ -84,6 +87,13 @@ export default function Navbar() {
             onClick={() => setOpen(false)}
           >
             Open Positions
+          </a>
+          <a
+            href="#about-us"
+            className="block text-base font-medium hover:underline"
+            onClick={() => setOpen(false)}
+          >
+            About Us
           </a>
            <a href="https://shorturl.at/JuvV8" className="hover:underline text-sm font-medium">
               Ecertificates

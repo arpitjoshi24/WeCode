@@ -11,6 +11,7 @@ import Codethon from "./pages/codethon"
 import Hackathon from "./pages/hackathon"
 import Induction from "./pages/induction"
 import Openbook from "./pages/openbook"
+import AboutUs from './components/AboutUs';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
               <Hero />
               <Events />
               <Resources />
+              <AboutUs />
               <OpenPosition />
               <ContactUs />
             </>
