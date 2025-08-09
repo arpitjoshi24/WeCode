@@ -3,6 +3,9 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom"; 
 import WebDev from "./WebDev";
 import Ai from "./AI";
+import DSA from "./DSA"; 
+import Cybersecurity from "./Cybersecurity";
+import CP from "./CP"; // ✅ Added CP.jsx import
 
 const domains = [
   {
@@ -15,25 +18,25 @@ const domains = [
     id: 2,
     title: "AI / Machine Learning",
     description: "Dive into AI concepts, model building, and machine learning workflows.",
-    link: "/Ai"
+    link: "/AI"
   },
   {
     id: 3,
     title: "Data Structures & Algorithms",
     description: "Master problem-solving and algorithmic thinking.",
-    link: "/resources/dsa"
+    link: "/DSA"
   },
   {
     id: 4,
     title: "Cybersecurity",
     description: "Understand ethical hacking, penetration testing, and network security.",
-    link: "/resources/cybersecurity"
+    link: "/Cybersecurity"
   },
   {
     id: 5,
     title: "Competitive Programming",
     description: "Sharpen your problem-solving speed and accuracy for contests.",
-    link: "/resources/competitive-programming"
+    link: "/CP" // ✅ Updated link to match route
   }
 ];
 
@@ -67,7 +70,7 @@ export default function Resources() {
               <p className="text-xs text-white/80 mt-1">{domain.description}</p>
 
               <Link
-                to={domain.link} // ✅ internal navigation
+                to={domain.link}
                 className="mt-3 inline-flex items-center gap-1 text-xs font-semibold bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-3 py-1.5 rounded-full shadow hover:brightness-105 transition"
               >
                 View Roadmap <ArrowRight size={14} />
