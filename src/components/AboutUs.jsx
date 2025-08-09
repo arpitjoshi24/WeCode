@@ -56,8 +56,8 @@ const AboutUs = () => {
   ];
   
   const stats = [
-    { label: "Members", value: "2000+" },
-    { label: "Events", value: "50+" },
+    { label: "Members", value: "350+" },
+    { label: "Events", value: "10+" },
     { label: "Placements", value: "100+" },
     { label: "Years of Experience", value: "6+" },
   ];
