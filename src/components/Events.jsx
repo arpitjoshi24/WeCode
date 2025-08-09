@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { CalendarDays, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 
 // Utility to format date
@@ -161,32 +162,64 @@ export default function Events() {
                     {formatDate(e.date)}
                   </div>  
                   {e.type === "past" ? (
-  <a
-    href={e.link}
-    className="bg-white/10 rounded-xl p-4 shadow-lg backdrop-blur-lg block hover:brightness-110 transition"
-  >
-    {e.image && (
-      <img
-        src={e.image}
-        alt={e.title}
-        className="w-full h-32 object-cover rounded-md mb-2"
-      />
-    )}
-    <h3 className="text-lg font-semibold">{e.title}</h3>
-    <p className="text-sm text-white/80 mt-1">{e.description}</p>
-    <div className="text-xs mt-2 text-white/60">{formatDate(e.date)}</div>
-  </a>
+  // For internal routes, use Link; for external URLs, use <a>
+  e.link.startsWith('/') ? (
+    <Link
+      to={e.link}
+      className="bg-white/10 rounded-xl p-4 shadow-lg backdrop-blur-lg block hover:brightness-110 transition"
+    >
+      {e.image && (
+        <img
+          src={e.image}
+          alt={e.title}
+          className="w-full h-32 object-cover rounded-md mb-2"
+        />
+      )}
+      <h3 className="text-lg font-semibold">{e.title}</h3>
+      <p className="text-sm text-white/80 mt-1">{e.description}</p>
+      <div className="text-xs mt-2 text-white/60">{formatDate(e.date)}</div>
+    </Link>
+  ) : (
+    <a
+      href={e.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-white/10 rounded-xl p-4 shadow-lg backdrop-blur-lg block hover:brightness-110 transition"
+    >
+      {e.image && (
+        <img
+          src={e.image}
+          alt={e.title}
+          className="w-full h-32 object-cover rounded-md mb-2"
+        />
+      )}
+      <h3 className="text-lg font-semibold">{e.title}</h3>
+      <p className="text-sm text-white/80 mt-1">{e.description}</p>
+      <div className="text-xs mt-2 text-white/60">{formatDate(e.date)}</div>
+    </a>
+  )
 ) : (
   <div className="bg-white/10 rounded-xl p-4 shadow-lg backdrop-blur-lg">
     <h3 className="text-lg font-semibold">{e.title}</h3>
     <p className="text-sm text-white/80 mt-1">{e.description}</p>
     <div className="text-xs mt-2 text-white/60">{formatDate(e.date)}</div>
-    <a
-      href={e.link}
-      className="mt-3 inline-flex items-center gap-1 text-sm font-semibold bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 py-2 rounded-full shadow hover:brightness-105 transition"
-    >
-      Register <ArrowRight size={16} />
-    </a>
+    {e.link.startsWith('/') ? (
+      <Link
+        to={e.link}
+        className="mt-3 inline-flex items-center gap-1 text-sm font-semibold bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 py-2 rounded-full shadow hover:brightness-105 transition"
+      >
+        View Details <ArrowRight size={16} />
+      </Link>
+    ) : (
+      <a
+        href={e.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-3 inline-flex items-center gap-1 text-sm font-semibold bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 py-2 rounded-full shadow hover:brightness-105 transition"
+      >
+        Register <ArrowRight size={16} />
+      </a>
+    )}
   </div>
 )}
 </div>
