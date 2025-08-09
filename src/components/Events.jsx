@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { CalendarDays, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import useEvents from "../hooks/useEvents";
 
 
 // Utility to format date
@@ -15,81 +16,19 @@ function formatDate(dt) {
 }
 
 
-const sampleEvents = [
-  {
-    id: 1,
-    title: "Hackathon Kickoff",
-    description:
-      "Gear up for a 24-hour coding sprint. Teams, challenges, and prizes await!",
-    date: "2025-09-05T10:00:00",
-    type: "upcoming",
-    link: "https://forms.google.com/your-hackathon-form-id",  // repace with actual google form url
-  },
-  {
-    id: 2,
-    title: "Git & GitHub Workshop",
-    description:
-      "Learn version control from basics to advanced workflows with hands-on labs.",
-    date: "2025-08-20T15:00:00",
-    type: "upcoming",
-    link: "https://forms.google.com/your-hackathon-form-id",  // repace with actual google form url,
-  },
-  {
-    id: 3,
-    title: "Codethon – Hack the Spring",
-    description:
-      "A coding sprint where students tackled problem-solving challenges under time pressure.",
-    date: "2025-04-22T18:00:00",
-    type: "past",
-    link: "/codethon",  
-    image: "/e2.JPG",
-  },
-  {
-    id: 4,
-    title: "Hackathon – Hack the Spring",
-    description:
-      "Teams collaborated to build creative tech solutions in 24 hours.",
-    date: "2025-04-23T14:00:00",
-    type: "past",
-    link: "/hackathon",
-    image: "./e3.jpg",
-  },
-  {
-    id: 5,
-    title: "Induction Program",
-    description:
-      "Welcome session for new members with club orientation, core intro, and ice-breaking games.",
-    date: "2025-04-15T10:00:00",
-    type: "past",
-    link: "/induction", 
-    image: "./e1.JPG",
-  },
-  {
-    id: 6,
-    title: "Open Book Challenge",
-    description:
-      "An open-book coding challenge that tests logic, not memory. Think, search, and solve!",
-    date: "2025-04-18T11:00:00",
-    type: "past",
-    link: "/openbook",  
-    image: "/e2.JPG",
-  }
-];
+
 
 export default function Events() {
   const [tab, setTab] = useState("upcoming");
   const [search, setSearch] = useState("");
+  const { upcomingEvents, pastEvents } = useEvents();
 
   const filtered = useMemo(() => {
-    const now = new Date();
-    return sampleEvents
-      .filter((e) =>
-        tab === "upcoming" ? new Date(e.date) >= now : new Date(e.date) < now
-      )
-      .filter((e) =>
-        e.title.toLowerCase().includes(search.trim().toLowerCase())
-      );
-  }, [tab, search]);
+    const events = tab === "upcoming" ? upcomingEvents : pastEvents;
+    return events.filter((e) =>
+      e.title.toLowerCase().includes(search.trim().toLowerCase())
+    );
+  }, [tab, search, upcomingEvents, pastEvents]);
 
   return (
     <div
@@ -162,10 +101,8 @@ export default function Events() {
                     {formatDate(e.date)}
                   </div>  
                   {e.type === "past" ? (
-  // For internal routes, use Link; for external URLs, use <a>
-  e.link.startsWith('/') ? (
     <Link
-      to={e.link}
+      to={`/event/${e.id}`}
       className="bg-white/10 rounded-xl p-4 shadow-lg backdrop-blur-lg block hover:brightness-110 transition"
     >
       {e.image && (
@@ -180,48 +117,29 @@ export default function Events() {
       <div className="text-xs mt-2 text-white/60">{formatDate(e.date)}</div>
     </Link>
   ) : (
-    <a
-      href={e.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="bg-white/10 rounded-xl p-4 shadow-lg backdrop-blur-lg block hover:brightness-110 transition"
-    >
-      {e.image && (
-        <img
-          src={e.image}
-          alt={e.title}
-          className="w-full h-32 object-cover rounded-md mb-2"
-        />
-      )}
+    <div className="bg-white/10 rounded-xl p-4 shadow-lg backdrop-blur-lg">
       <h3 className="text-lg font-semibold">{e.title}</h3>
       <p className="text-sm text-white/80 mt-1">{e.description}</p>
       <div className="text-xs mt-2 text-white/60">{formatDate(e.date)}</div>
-    </a>
-  )
-) : (
-  <div className="bg-white/10 rounded-xl p-4 shadow-lg backdrop-blur-lg">
-    <h3 className="text-lg font-semibold">{e.title}</h3>
-    <p className="text-sm text-white/80 mt-1">{e.description}</p>
-    <div className="text-xs mt-2 text-white/60">{formatDate(e.date)}</div>
-    {e.link.startsWith('/') ? (
-      <Link
-        to={e.link}
-        className="mt-3 inline-flex items-center gap-1 text-sm font-semibold bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 py-2 rounded-full shadow hover:brightness-105 transition"
-      >
-        View Details <ArrowRight size={16} />
-      </Link>
-    ) : (
-      <a
-        href={e.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-3 inline-flex items-center gap-1 text-sm font-semibold bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 py-2 rounded-full shadow hover:brightness-105 transition"
-      >
-        Register <ArrowRight size={16} />
-      </a>
-    )}
-  </div>
-)}
+      {e.registrationLink ? (
+        <a
+          href={e.registrationLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 inline-flex items-center gap-1 text-sm font-semibold bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 py-2 rounded-full shadow hover:brightness-105 transition"
+        >
+          Register <ArrowRight size={16} />
+        </a>
+      ) : (
+        <Link
+          to={`/event/${e.id}`}
+          className="mt-3 inline-flex items-center gap-1 text-sm font-semibold bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 py-2 rounded-full shadow hover:brightness-105 transition"
+        >
+          View Details <ArrowRight size={16} />
+        </Link>
+      )}
+    </div>
+  )}
 </div>
               ))}
             </div>

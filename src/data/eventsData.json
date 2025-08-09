@@ -1,0 +1,464 @@
+{
+  "events": [
+    {
+      "id": "hackathon-spring-2025",
+      "title": "Hackathon – Hack the Spring",
+      "shortTitle": "Hackathon",
+      "description": "Teams collaborated to build creative tech solutions in 24 hours.",
+      "longDescription": "An intense 24-hour coding marathon where brilliant minds collaborated to build innovative tech solutions addressing real-world challenges and pushing the boundaries of what's possible",
+      "date": "2025-04-23T14:00:00",
+      "endDate": "2025-04-24T14:00:00",
+      "type": "past",
+      "category": "hackathon",
+      "location": "Computer Lab, Block A",
+      "duration": "24 Hours Non-Stop",
+      "participants": "50+ Teams",
+      "image": "./e3.jpg",
+      "gallery": ["/e2.JPG", "/e1.JPG", "/e3.jpg"],
+      "highlights": [
+        {
+          "icon": "Users",
+          "title": "50+ Teams",
+          "desc": "Cross-functional teams of developers",
+          "color": "from-blue-400 to-cyan-400"
+        },
+        {
+          "icon": "Trophy",
+          "title": "24 Hours",
+          "desc": "Non-stop coding marathon",
+          "color": "from-cyan-400 to-teal-400"
+        },
+        {
+          "icon": "Code",
+          "title": "Multiple Tracks",
+          "desc": "Web Dev, Mobile, AI/ML",
+          "color": "from-teal-400 to-blue-500"
+        },
+        {
+          "icon": "Zap",
+          "title": "Innovation Focus",
+          "desc": "Real-world problem solving",
+          "color": "from-blue-500 to-indigo-400"
+        }
+      ],
+      "winners": [
+        {
+          "position": "1st Place",
+          "team": "Ctrl C Ctrl V",
+          "members": ["Team Member 1", "Team Member 2"],
+          "rank": 1,
+          "description": "Innovative solution description"
+        },
+        {
+          "position": "2nd Place",
+          "team": "Team Bit",
+          "members": ["Team Member 3", "Team Member 4"],
+          "rank": 2,
+          "description": "Creative approach description"
+        },
+        {
+          "position": "3rd Place",
+          "team": "Penguins",
+          "members": ["Team Member 5", "Team Member 6"],
+          "rank": 3,
+          "description": "Technical excellence description"
+        }
+      ],
+      "tracks": [
+        {
+          "name": "Web Development & APIs",
+          "description": "Build modern web applications"
+        },
+        {
+          "name": "Mobile Applications",
+          "description": "Create mobile solutions"
+        },
+        {
+          "name": "AI/ML Solutions",
+          "description": "Leverage artificial intelligence"
+        }
+      ],
+      "judging_criteria": [
+        "Innovation & Creativity",
+        "Technical Implementation",
+        "Real-world Impact",
+        "Presentation Quality"
+      ],
+      "prizes": [
+        "Cash Prize ₹50,000",
+        "Internship Opportunities",
+        "Mentorship Sessions",
+        "Certificates & Goodies"
+      ],
+      "theme": {
+        "primary": "from-slate-900 via-blue-900 to-indigo-900",
+        "accent": "from-blue-400 to-cyan-400",
+        "gradient": "from-blue-600/20 via-cyan-600/15 to-indigo-600/20"
+      }
+    },
+    {
+      "id": "codethon-spring-2025",
+      "title": "Codethon – Hack the Spring",
+      "shortTitle": "Codethon",
+      "description": "A coding sprint where students tackled problem-solving challenges under time pressure.",
+      "longDescription": "An intensive coding challenge that tests algorithmic thinking, problem-solving skills, and coding efficiency under time constraints",
+      "date": "2025-04-22T18:00:00",
+      "endDate": "2025-04-22T22:00:00",
+      "type": "past",
+      "category": "coding-challenge",
+      "location": "Computer Lab, Block B",
+      "duration": "4 Hours",
+      "participants": "80+ Participants",
+      "image": "/e2.JPG",
+      "gallery": ["/e2.JPG", "/e1.JPG", "/e3.jpg"],
+      "highlights": [
+        {
+          "icon": "Code",
+          "title": "Algorithm Focus",
+          "desc": "Data structures and algorithms",
+          "color": "from-purple-400 to-pink-400"
+        },
+        {
+          "icon": "Timer",
+          "title": "Time Challenge",
+          "desc": "Fast-paced problem solving",
+          "color": "from-pink-400 to-red-400"
+        },
+        {
+          "icon": "Brain",
+          "title": "Logic Building",
+          "desc": "Critical thinking skills",
+          "color": "from-red-400 to-orange-400"
+        },
+        {
+          "icon": "Trophy",
+          "title": "Competitive",
+          "desc": "Ranked leaderboard system",
+          "color": "from-orange-400 to-yellow-400"
+        }
+      ],
+      "winners": [
+        {
+          "position": "1st Place",
+          "team": "Code Ninja",
+          "members": ["Individual Winner"],
+          "rank": 1,
+          "description": "Perfect score achiever"
+        },
+        {
+          "position": "2nd Place",
+          "team": "Algorithm Master",
+          "members": ["Individual Winner"],
+          "rank": 2,
+          "description": "Excellent problem solving"
+        },
+        {
+          "position": "3rd Place",
+          "team": "Logic Wizard",
+          "members": ["Individual Winner"],
+          "rank": 3,
+          "description": "Creative solutions"
+        }
+      ],
+      "challenges": [
+        {
+          "name": "Array Manipulation",
+          "difficulty": "Medium",
+          "description": "Complex array operations"
+        },
+        {
+          "name": "Dynamic Programming",
+          "difficulty": "Hard",
+          "description": "Optimization problems"
+        },
+        {
+          "name": "Graph Algorithms",
+          "difficulty": "Hard",
+          "description": "Shortest path and traversal"
+        }
+      ],
+      "theme": {
+        "primary": "from-slate-900 via-purple-900 to-pink-900",
+        "accent": "from-purple-400 to-pink-400",
+        "gradient": "from-purple-600/20 via-pink-600/15 to-purple-600/20"
+      }
+    },
+    {
+      "id": "induction-2025",
+      "title": "Induction Program",
+      "shortTitle": "Induction",
+      "description": "Welcome session for new members with club orientation, core intro, and ice-breaking games.",
+      "longDescription": "A comprehensive welcome program designed to introduce new members to WeCode's culture, values, and community through interactive sessions and team-building activities",
+      "date": "2025-04-15T10:00:00",
+      "endDate": "2025-04-15T16:00:00",
+      "type": "past",
+      "category": "orientation",
+      "location": "Main Auditorium",
+      "duration": "6 Hours",
+      "participants": "200+ New Members",
+      "image": "./e1.JPG",
+      "gallery": ["/e1.JPG", "/e2.JPG", "/e3.jpg"],
+      "highlights": [
+        {
+          "icon": "Heart",
+          "title": "Warm Welcome",
+          "desc": "Friendly introduction to WeCode",
+          "color": "from-pink-400 to-rose-400"
+        },
+        {
+          "icon": "Users",
+          "title": "Team Building",
+          "desc": "Ice-breaking activities",
+          "color": "from-rose-400 to-orange-400"
+        },
+        {
+          "icon": "BookOpen",
+          "title": "Club Overview",
+          "desc": "Learn about our mission",
+          "color": "from-orange-400 to-yellow-400"
+        },
+        {
+          "icon": "Coffee",
+          "title": "Networking",
+          "desc": "Meet seniors and peers",
+          "color": "from-yellow-400 to-green-400"
+        }
+      ],
+      "activities": [
+        {
+          "name": "Welcome Address",
+          "time": "10:00 AM",
+          "description": "Introduction by club president"
+        },
+        {
+          "name": "Ice Breaking Games",
+          "time": "11:00 AM",
+          "description": "Fun activities to know each other"
+        },
+        {
+          "name": "Club Presentation",
+          "time": "2:00 PM",
+          "description": "Overview of club activities and opportunities"
+        },
+        {
+          "name": "Q&A Session",
+          "time": "3:30 PM",
+          "description": "Open discussion with core team"
+        }
+      ],
+      "benefits": [
+        "Club Membership Certificate",
+        "Access to Exclusive Events",
+        "Mentorship Programs",
+        "Skill Development Workshops",
+        "Industry Connections"
+      ],
+      "theme": {
+        "primary": "from-slate-900 via-emerald-900 to-teal-900",
+        "accent": "from-emerald-400 to-teal-400",
+        "gradient": "from-emerald-600/20 via-teal-600/15 to-emerald-600/20"
+      }
+    },
+    {
+      "id": "openbook-challenge-2025",
+      "title": "Open Book Challenge",
+      "shortTitle": "Open Book",
+      "description": "An open-book coding challenge that tests logic, not memory. Think, search, and solve!",
+      "longDescription": "A unique coding challenge where participants can use any resources they want - the focus is on logical thinking, research skills, and practical problem-solving rather than memorization",
+      "date": "2025-04-18T11:00:00",
+      "endDate": "2025-04-18T15:00:00",
+      "type": "past",
+      "category": "coding-challenge",
+      "location": "Computer Lab, Block C",
+      "duration": "4 Hours",
+      "participants": "60+ Participants",
+      "image": "/e2.JPG",
+      "gallery": ["/e2.JPG", "/e1.JPG", "/e3.jpg"],
+      "highlights": [
+        {
+          "icon": "BookOpen",
+          "title": "Open Resources",
+          "desc": "Use any learning materials",
+          "color": "from-blue-400 to-indigo-400"
+        },
+        {
+          "icon": "Search",
+          "title": "Research Skills",
+          "desc": "Find solutions effectively",
+          "color": "from-indigo-400 to-purple-400"
+        },
+        {
+          "icon": "Brain",
+          "title": "Logic Focus",
+          "desc": "Thinking over memorization",
+          "color": "from-purple-400 to-pink-400"
+        },
+        {
+          "icon": "Target",
+          "title": "Real Problems",
+          "desc": "Industry-relevant challenges",
+          "color": "from-pink-400 to-red-400"
+        }
+      ],
+      "features": [
+        {
+          "name": "Internet Access",
+          "description": "Full access to online resources and documentation"
+        },
+        {
+          "name": "Multiple Languages",
+          "description": "Code in your preferred programming language"
+        },
+        {
+          "name": "Real-world Problems",
+          "description": "Challenges based on actual industry scenarios"
+        },
+        {
+          "name": "Collaborative Learning",
+          "description": "Discussion and knowledge sharing encouraged"
+        }
+      ],
+      "problem_categories": [
+        "Web Development",
+        "Data Analysis",
+        "Algorithm Design",
+        "API Integration",
+        "Database Queries"
+      ],
+      "theme": {
+        "primary": "from-slate-900 via-orange-900 to-yellow-900",
+        "accent": "from-orange-400 to-yellow-400",
+        "gradient": "from-orange-600/20 via-yellow-600/15 to-orange-600/20"
+      }
+    },
+    {
+      "id": "upcoming-workshop-git",
+      "title": "Git & GitHub Workshop",
+      "shortTitle": "Git Workshop",
+      "description": "Learn version control from basics to advanced workflows with hands-on labs.",
+      "longDescription": "A comprehensive workshop covering Git fundamentals, GitHub collaboration, branching strategies, and industry best practices for version control",
+      "date": "2025-08-20T15:00:00",
+      "endDate": "2025-08-20T18:00:00",
+      "type": "upcoming",
+      "category": "workshop",
+      "location": "Computer Lab, Block A",
+      "duration": "3 Hours",
+      "participants": "Limited to 40",
+      "registrationLink": "https://forms.google.com/your-git-workshop-form",
+      "highlights": [
+        {
+          "icon": "Code",
+          "title": "Hands-on Learning",
+          "desc": "Practical Git exercises",
+          "color": "from-green-400 to-blue-400"
+        },
+        {
+          "icon": "Users",
+          "title": "Collaboration",
+          "desc": "Team-based projects",
+          "color": "from-blue-400 to-purple-400"
+        },
+        {
+          "icon": "BookOpen",
+          "title": "Best Practices",
+          "desc": "Industry standards",
+          "color": "from-purple-400 to-pink-400"
+        },
+        {
+          "icon": "Trophy",
+          "title": "Certification",
+          "desc": "Completion certificate",
+          "color": "from-pink-400 to-red-400"
+        }
+      ],
+      "topics": [
+        "Git Basics & Installation",
+        "Repository Management",
+        "Branching & Merging",
+        "GitHub Collaboration",
+        "Pull Requests & Code Review",
+        "Git Workflows & Best Practices"
+      ],
+      "prerequisites": [
+        "Basic programming knowledge",
+        "Laptop with internet connection",
+        "GitHub account (will help create if needed)"
+      ],
+      "theme": {
+        "primary": "from-slate-900 via-green-900 to-blue-900",
+        "accent": "from-green-400 to-blue-400",
+        "gradient": "from-green-600/20 via-blue-600/15 to-green-600/20"
+      }
+    },
+    {
+      "id": "upcoming-hackathon-winter",
+      "title": "Hackathon Kickoff",
+      "shortTitle": "Winter Hackathon",
+      "description": "Gear up for a 24-hour coding sprint. Teams, challenges, and prizes await!",
+      "longDescription": "The ultimate coding challenge returns! Join us for 24 hours of innovation, collaboration, and competition as teams build solutions for real-world problems",
+      "date": "2025-09-05T10:00:00",
+      "endDate": "2025-09-06T10:00:00",
+      "type": "upcoming",
+      "category": "hackathon",
+      "location": "Main Campus",
+      "duration": "24 Hours",
+      "participants": "Teams of 3-4",
+      "registrationLink": "https://forms.google.com/your-hackathon-form-id",
+      "highlights": [
+        {
+          "icon": "Trophy",
+          "title": "Big Prizes",
+          "desc": "₹1,00,000+ in prizes",
+          "color": "from-yellow-400 to-orange-400"
+        },
+        {
+          "icon": "Users",
+          "title": "Team Spirit",
+          "desc": "Collaborative innovation",
+          "color": "from-orange-400 to-red-400"
+        },
+        {
+          "icon": "Code",
+          "title": "Latest Tech",
+          "desc": "Cutting-edge tools",
+          "color": "from-red-400 to-pink-400"
+        },
+        {
+          "icon": "Zap",
+          "title": "Non-stop Fun",
+          "desc": "24/7 excitement",
+          "color": "from-pink-400 to-purple-400"
+        }
+      ],
+      "tracks": [
+        {
+          "name": "AI & Machine Learning",
+          "description": "Build intelligent solutions"
+        },
+        {
+          "name": "Web3 & Blockchain",
+          "description": "Decentralized applications"
+        },
+        {
+          "name": "Mobile Development",
+          "description": "iOS and Android apps"
+        },
+        {
+          "name": "Open Innovation",
+          "description": "Any creative solution"
+        }
+      ],
+      "prizes": [
+        "Winner: ₹50,000 + Internships",
+        "Runner-up: ₹30,000 + Mentorship",
+        "Second Runner-up: ₹20,000 + Goodies",
+        "Special Categories: Various prizes"
+      ],
+      "theme": {
+        "primary": "from-slate-900 via-purple-900 to-indigo-900",
+        "accent": "from-purple-400 to-indigo-400",
+        "gradient": "from-purple-600/20 via-indigo-600/15 to-purple-600/20"
+      }
+    }
+  ]
+}

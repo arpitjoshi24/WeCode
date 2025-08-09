@@ -14,7 +14,7 @@ export default function Navbar() {
             {/* Space logo: simple rocket SVG */}
             <div className="flex-shrink-0">
               <div className="w-10 h-10 bg-gradient-to-tr from-indigo-400 to-sky-300 rounded-full flex items-center justify-center">
-               <img src="./logo.jpeg" alt="" />
+               <img src="/logo.jpeg" alt="WeCode Logo" />
               </div>
             </div>
             <span className="text-xl font-bold tracking-tight">WeCode</span>
