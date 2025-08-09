@@ -1,8 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, MapPin, Users, Trophy, Code, ChevronLeft, Star, Award, Target, Zap, Eye, Lightbulb, Coffee, Rocket } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-export default function Codethon() {
+export default function Hackathon() {
   const [activeTab, setActiveTab] = useState('overview');
   const [selectedImage, setSelectedImage] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -73,6 +74,14 @@ export default function Codethon() {
         <div className={`relative max-w-7xl mx-auto px-6 py-12 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
+          {/* Back Button */}
+          <Link 
+            to="/" 
+            className="inline-flex items-center gap-2 text-blue-200 hover:text-white transition-colors mb-8 group"
+          >
+            <ChevronLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+            Back to Home
+          </Link>
          
           
           <div className="grid md:grid-cols-2 gap-12 items-center">

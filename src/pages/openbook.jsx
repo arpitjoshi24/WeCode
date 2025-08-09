@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Calendar, Clock, MapPin, Users, Brain, Search, ChevronLeft, Trophy, BookOpen, Lightbulb, Target, Code, Timer } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function OpenBook() {
   const [activeTab, setActiveTab] = useState('overview');
@@ -115,10 +116,13 @@ export default function OpenBook() {
         </div>
         
         <div className="relative max-w-7xl mx-auto px-6 py-16">
-          <button className="flex items-center gap-2 text-white/80 hover:text-white mb-8 transition-colors">
-            <ChevronLeft size={20} />
-            Back to Events
-          </button>
+          <Link 
+            to="/" 
+            className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-8 transition-colors group"
+          >
+            <ChevronLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+            Back to Home
+          </Link>
           
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 px-6 py-3 rounded-full mb-6 backdrop-blur-sm">
