@@ -272,8 +272,8 @@
       "location": "Computer Lab, Block C",
       "duration": "4 Hours",
       "participants": "60+ Participants",
-      "image": "/e2.JPG",
-      "gallery": ["/e2.JPG", "/e1.JPG", "/e3.jpg"],
+      "image": "/o3.jpeg",
+      "gallery": ["/o2.jpeg", "/o1.jpeg", "/o3.jpeg","/o4.jpeg"],
       "highlights": [
         {
           "icon": "BookOpen",
