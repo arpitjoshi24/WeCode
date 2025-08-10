@@ -326,9 +326,9 @@
         "Database Queries"
       ],
       "theme": {
-        "primary": "from-slate-900 via-orange-900 to-yellow-900",
-        "accent": "from-orange-400 to-yellow-400",
-        "gradient": "from-orange-600/20 via-yellow-600/15 to-orange-600/20"
+    "primary": "from-slate-900 via-blue-900 to-indigo-900",
+    "accent": "from-blue-400 to-cyan-400",
+    "gradient": "from-blue-600/20 via-cyan-600/15 to-indigo-600/20"
       }
     },
     {
