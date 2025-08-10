@@ -28,9 +28,7 @@ export default function Navbar() {
               <a href="#resources" className="hover:underline text-sm font-medium">
               Resource Material
             </a>
-            <a href="#about-us" className="hover:underline text-sm font-medium">
-              About Us
-            </a>
+            
             <a href="#openposition" className="hover:underline text-sm font-medium">
               Open Positions
             </a>
