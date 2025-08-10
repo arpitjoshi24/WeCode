@@ -88,13 +88,7 @@ export default function Navbar() {
           >
             Open Positions
           </a>
-          <a
-            href="#about-us"
-            className="block text-base font-medium hover:underline"
-            onClick={() => setOpen(false)}
-          >
-            About Us
-          </a>
+         
            <a href="https://shorturl.at/JuvV8" className="hover:underline text-sm font-medium">
               Ecertificates
             </a>
