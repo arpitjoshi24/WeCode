@@ -177,11 +177,11 @@
           "description": "Shortest path and traversal"
         }
       ],
-      "theme": {
-        "primary": "from-slate-900 via-purple-900 to-pink-900",
-        "accent": "from-purple-400 to-pink-400",
-        "gradient": "from-purple-600/20 via-pink-600/15 to-purple-600/20"
-      }
+       "theme": {
+    "primary": "from-slate-900 via-blue-900 to-indigo-900",
+    "accent": "from-blue-400 to-cyan-400",
+    "gradient": "from-blue-600/20 via-cyan-600/15 to-indigo-600/20"
+       }
     },
     {
       "id": "induction-2025",
@@ -253,11 +253,11 @@
         "Skill Development Workshops",
         "Industry Connections"
       ],
-      "theme": {
-        "primary": "from-slate-900 via-emerald-900 to-teal-900",
-        "accent": "from-emerald-400 to-teal-400",
-        "gradient": "from-emerald-600/20 via-teal-600/15 to-emerald-600/20"
-      }
+        "theme": {
+    "primary": "from-slate-900 via-blue-900 to-indigo-900",
+    "accent": "from-blue-400 to-cyan-400",
+    "gradient": "from-blue-600/20 via-cyan-600/15 to-indigo-600/20"
+        }
     },
     {
       "id": "openbook-challenge-2025",
@@ -384,11 +384,11 @@
         "Laptop with internet connection",
         "GitHub account (will help create if needed)"
       ],
-      "theme": {
-        "primary": "from-slate-900 via-green-900 to-blue-900",
-        "accent": "from-green-400 to-blue-400",
-        "gradient": "from-green-600/20 via-blue-600/15 to-green-600/20"
-      }
+       "theme": {
+    "primary": "from-slate-900 via-blue-900 to-indigo-900",
+    "accent": "from-blue-400 to-cyan-400",
+    "gradient": "from-blue-600/20 via-cyan-600/15 to-indigo-600/20"
+       }
     },
     {
       "id": "upcoming-hackathon-winter",
