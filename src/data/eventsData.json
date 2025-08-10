@@ -196,8 +196,8 @@
       "location": "Main Auditorium",
       "duration": "6 Hours",
       "participants": "200+ New Members",
-      "image": "./e1.JPG",
-      "gallery": ["/e1.JPG", "/e2.JPG", "/e3.jpg"],
+      "image": "./i1.jpg",
+      "gallery": ["/i1.jpg", "/i2.jpg", "/i3.jpg"],
       "highlights": [
         {
           "icon": "Heart",
