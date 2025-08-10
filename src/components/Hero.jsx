@@ -23,7 +23,7 @@ export default function Hero() {
             Join Discord
           </a>
           <a
-            href="#"
+            href="#contact"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 bg-white text-[#1e3a8a] font-semibold rounded-full shadow hover:brightness-105 transition"
