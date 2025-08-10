@@ -13,10 +13,7 @@ import CP from './components/CP'; // ✅ Added CP import
 import DynamicEventPage from "./components/DynamicEventPage";
 import EventManager from "./components/EventManager";
 // Legacy event pages
-import Codethon from "./pages/codethon";
-import Hackathon from "./pages/hackathon";
-import Induction from "./pages/induction";
-import Openbook from "./pages/openbook";
+
 
 
 function App() {
@@ -53,10 +50,7 @@ function App() {
         <Route path="/admin/events" element={<EventManager />} />
 
         {/* Legacy Event Pages */}
-        <Route path="/codethon" element={<Codethon />} />
-        <Route path="/hackathon" element={<Hackathon />} />
-        <Route path="/induction" element={<Induction />} />
-        <Route path="/openbook" element={<Openbook />} />
+      
       </Routes>
     </>
   );
