@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 import ReactFlow, { Background, Controls, Handle } from "reactflow";
 import "reactflow/dist/style.css";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 // Topic Data
 const topics = [
@@ -128,54 +129,66 @@ export default function WebDevRoadmap() {
 
   return (
     <div className="pt-24 pb-16 bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#3b82f6] min-h-screen text-white">
-      <div style={{ height: "80vh" }}>
-        <ReactFlow
-          nodes={nodes}
-          edges={edges}
-          nodeTypes={{ custom: CustomNode, heading: HeadingNode }}
-          fitView
-          onNodeClick={onNodeClick}
-          panOnScroll
-          zoomOnScroll
-          proOptions={{ hideAttribution: true }}
+      {/* Fixed Back Button (adjusted for navbar) */}
+      <div className="fixed top-20 left-8 z-50">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full text-white font-semibold shadow transition"
         >
-          <Controls />
-          <Background color="#ffffff20" gap={20} />
-        </ReactFlow>
+          ← Back to Homepage
+        </Link>
       </div>
-
-      {/* Modern Glassmorphism Popup */}
-      <AnimatePresence>
-        {selected && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
-            onClick={() => setSelected(null)}
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-6">
+        <div style={{ height: "80vh" }}>
+          <ReactFlow
+            nodes={nodes}
+            edges={edges}
+            nodeTypes={{ custom: CustomNode, heading: HeadingNode }}
+            fitView
+            onNodeClick={onNodeClick}
+            panOnScroll
+            zoomOnScroll
+            proOptions={{ hideAttribution: true }}
           >
+            <Controls />
+            <Background color="#ffffff20" gap={20} />
+          </ReactFlow>
+        </div>
+
+        {/* Modern Glassmorphism Popup */}
+        <AnimatePresence>
+          {selected && (
             <motion.div
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.9 }}
-              transition={{ type: "spring", stiffness: 200, damping: 20 }}
-              className="bg-white/10 backdrop-blur-lg border border-white/20 p-6 rounded-xl shadow-xl max-w-sm w-full text-white"
-              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+              onClick={() => setSelected(null)}
             >
-              <h3 className="text-2xl font-bold mb-3">{selected.label}</h3>
-              <p className="text-white/80 mb-5">{selected.desc}</p>
-              <a
-                href={selected.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gradient-to-r from-blue-500 to-indigo-500 px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90"
+              <motion.div
+                initial={{ scale: 0.9 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.9 }}
+                transition={{ type: "spring", stiffness: 200, damping: 20 }}
+                className="bg-white/10 backdrop-blur-lg border border-white/20 p-6 rounded-xl shadow-xl max-w-sm w-full text-white"
+                onClick={(e) => e.stopPropagation()}
               >
-                Learn More
-              </a>
+                <h3 className="text-2xl font-bold mb-3">{selected.label}</h3>
+                <p className="text-white/80 mb-5">{selected.desc}</p>
+                <a
+                  href={selected.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-blue-500 to-indigo-500 px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90"
+                >
+                  Learn More
+                </a>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 }

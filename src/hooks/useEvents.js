@@ -8,12 +8,25 @@ export const useEvents = () => {
   const allEvents = eventsData.events;
 
   // Filter events by type (past/upcoming)
+  // Prefer explicit event.type when provided; fall back to date comparison
   const getEventsByType = useMemo(() => {
     const now = new Date();
+
+    const isUpcoming = (event) => {
+      if (event.type === 'upcoming') return true;
+      if (event.type === 'past') return false;
+      return new Date(event.date) >= now;
+    };
+
+    const isPast = (event) => {
+      if (event.type === 'past') return true;
+      if (event.type === 'upcoming') return false;
+      return new Date(event.date) < now;
+    };
     
     return {
-      upcoming: allEvents.filter(event => new Date(event.date) >= now),
-      past: allEvents.filter(event => new Date(event.date) < now),
+      upcoming: allEvents.filter(isUpcoming),
+      past: allEvents.filter(isPast),
       all: allEvents
     };
   }, [allEvents]);
