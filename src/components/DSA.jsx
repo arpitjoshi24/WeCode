@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 import ReactFlow, { Background, Controls, Handle } from "reactflow";
 import "reactflow/dist/style.css";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 // Topics DATA
 const topics = [
@@ -159,6 +160,23 @@ export default function DSARoadmap() {
 
   return (
     <div className="pt-24 pb-16 bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#3b82f6] min-h-screen text-white">
+      {/* Fixed Back Button (adjusted for navbar) */}
+      <div className="fixed top-20 left-8 z-50">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full text-white font-semibold shadow transition"
+        >
+          ← Back to Homepage
+        </Link>
+      </div>
+      <div className="max-w-7xl mx-auto px-6 mb-6">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full text-white font-semibold shadow transition mb-6"
+        >
+          ← Back to Homepage
+        </Link>
+      </div>
       <div style={{ height: "80vh" }}>
         <ReactFlow
           nodes={nodes}

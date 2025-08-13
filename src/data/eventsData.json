@@ -189,8 +189,8 @@
       "shortTitle": "Induction",
       "description": "Welcome session for new members with club orientation, core intro, and ice-breaking games.",
       "longDescription": "A comprehensive welcome program designed to introduce new members to WeCode's culture, values, and community through interactive sessions and team-building activities",
-      "date": "2025-04-15T10:00:00",
-      "endDate": "2025-04-15T16:00:00",
+      "date": "2025-08-15T10:00:00",
+      "endDate": "2025-08-15T16:00:00",
       "type": "past",
       "category": "orientation",
       "location": "Main Auditorium",
@@ -265,7 +265,7 @@
       "shortTitle": "Open Book",
       "description": "An open-book coding challenge that tests logic, not memory. Think, search, and solve!",
       "longDescription": "A unique coding challenge where participants can use any resources they want - the focus is on logical thinking, research skills, and practical problem-solving rather than memorization",
-      "date": "2025-04-18T11:00:00",
+      "date": "2025-08-18T11:00:00",
       "endDate": "2025-04-18T15:00:00",
       "type": "past",
       "category": "coding-challenge",
@@ -332,132 +332,55 @@
       }
     },
     {
-      "id": "upcoming-workshop-git",
-      "title": "Git & GitHub Workshop",
-      "shortTitle": "Git Workshop",
-      "description": "Learn version control from basics to advanced workflows with hands-on labs.",
-      "longDescription": "A comprehensive workshop covering Git fundamentals, GitHub collaboration, branching strategies, and industry best practices for version control",
-      "date": "2025-08-20T15:00:00",
-      "endDate": "2025-08-20T18:00:00",
-      "type": "upcoming",
-      "category": "workshop",
-      "location": "Computer Lab, Block A",
-      "duration": "3 Hours",
-      "participants": "Limited to 40",
-      "registrationLink": "https://forms.google.com/your-git-workshop-form",
-      "highlights": [
-        {
-          "icon": "Code",
-          "title": "Hands-on Learning",
-          "desc": "Practical Git exercises",
-          "color": "from-green-400 to-blue-400"
-        },
-        {
-          "icon": "Users",
-          "title": "Collaboration",
-          "desc": "Team-based projects",
-          "color": "from-blue-400 to-purple-400"
-        },
-        {
-          "icon": "BookOpen",
-          "title": "Best Practices",
-          "desc": "Industry standards",
-          "color": "from-purple-400 to-pink-400"
-        },
-        {
-          "icon": "Trophy",
-          "title": "Certification",
-          "desc": "Completion certificate",
-          "color": "from-pink-400 to-red-400"
-        }
-      ],
-      "topics": [
-        "Git Basics & Installation",
-        "Repository Management",
-        "Branching & Merging",
-        "GitHub Collaboration",
-        "Pull Requests & Code Review",
-        "Git Workflows & Best Practices"
-      ],
-      "prerequisites": [
-        "Basic programming knowledge",
-        "Laptop with internet connection",
-        "GitHub account (will help create if needed)"
-      ],
-       "theme": {
-    "primary": "from-slate-900 via-blue-900 to-indigo-900",
-    "accent": "from-blue-400 to-cyan-400",
-    "gradient": "from-blue-600/20 via-cyan-600/15 to-indigo-600/20"
-       }
-    },
-    {
-      "id": "upcoming-hackathon-winter",
-      "title": "Hackathon Kickoff",
-      "shortTitle": "Winter Hackathon",
-      "description": "Gear up for a 24-hour coding sprint. Teams, challenges, and prizes await!",
-      "longDescription": "The ultimate coding challenge returns! Join us for 24 hours of innovation, collaboration, and competition as teams build solutions for real-world problems",
-      "date": "2025-09-05T10:00:00",
-      "endDate": "2025-09-06T10:00:00",
+      "id": "sih-internal-hackathon-2025",
+      "title": "SIH Internal Hackathon",
+      "shortTitle": "SIH Internal",
+      "description": "Institute-level Smart India Hackathon internal selection round.",
+      "longDescription": "Compete in teams to solve real-world problem statements as part of the institute's internal round for Smart India Hackathon. Top teams qualify for the national round.",
+      "date": "2025-08-25T10:00:00",
+      "endDate": "2025-08-26T10:00:00",
       "type": "upcoming",
       "category": "hackathon",
       "location": "Main Campus",
       "duration": "24 Hours",
-      "participants": "Teams of 3-4",
-      "registrationLink": "https://forms.google.com/your-hackathon-form-id",
+      "participants": "Teams of 4-6",
+      "image": "/",
+      "gallery": [],
       "highlights": [
         {
           "icon": "Trophy",
-          "title": "Big Prizes",
-          "desc": "₹1,00,000+ in prizes",
+          "title": "Institutional Round",
+          "desc": "Qualify for SIH nationals",
           "color": "from-yellow-400 to-orange-400"
         },
         {
           "icon": "Users",
-          "title": "Team Spirit",
+          "title": "Teamwork",
           "desc": "Collaborative innovation",
-          "color": "from-orange-400 to-red-400"
+          "color": "from-blue-400 to-indigo-400"
         },
         {
           "icon": "Code",
-          "title": "Latest Tech",
-          "desc": "Cutting-edge tools",
-          "color": "from-red-400 to-pink-400"
+          "title": "Real Problems",
+          "desc": "Industry-relevant challenges",
+          "color": "from-indigo-400 to-purple-400"
         },
         {
           "icon": "Zap",
-          "title": "Non-stop Fun",
-          "desc": "24/7 excitement",
-          "color": "from-pink-400 to-purple-400"
+          "title": "24 Hours",
+          "desc": "Non-stop sprint",
+          "color": "from-pink-400 to-red-400"
         }
       ],
       "tracks": [
-        {
-          "name": "AI & Machine Learning",
-          "description": "Build intelligent solutions"
-        },
-        {
-          "name": "Web3 & Blockchain",
-          "description": "Decentralized applications"
-        },
-        {
-          "name": "Mobile Development",
-          "description": "iOS and Android apps"
-        },
-        {
-          "name": "Open Innovation",
-          "description": "Any creative solution"
-        }
-      ],
-      "prizes": [
-        "Winner: ₹50,000 + Internships",
-        "Runner-up: ₹30,000 + Mentorship",
-        "Second Runner-up: ₹20,000 + Goodies",
-        "Special Categories: Various prizes"
+        { "name": "AI & Machine Learning", "description": "Build intelligent solutions" },
+        { "name": "Web Development", "description": "Modern web apps and APIs" },
+        { "name": "Open Innovation", "description": "Any creative solution" }
       ],
       "theme": {
-        "primary": "from-slate-900 via-purple-900 to-indigo-900",
-        "accent": "from-purple-400 to-indigo-400",
-        "gradient": "from-purple-600/20 via-indigo-600/15 to-purple-600/20"
+        "primary": "from-slate-900 via-blue-900 to-indigo-900",
+        "accent": "from-blue-400 to-cyan-400",
+        "gradient": "from-blue-600/20 via-cyan-600/15 to-indigo-600/20"
       }
     }
   ]
