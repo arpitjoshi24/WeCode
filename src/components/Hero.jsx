@@ -17,7 +17,7 @@ export default function Hero() {
         {/* Buttons */}
         <div className="flex flex-wrap justify-center gap-4">
            <a
-            href="https://discord.gg/dk25zDfk"
+            href="https://discord.gg/tCqWYgQYFH"
             className="px-6 py-3 bg-sky-500 text-white font-semibold rounded-full shadow hover:bg-sky-400 transition"
           >
             Join Discord
