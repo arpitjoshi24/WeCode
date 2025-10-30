@@ -40,7 +40,7 @@ export default function Navbar() {
             </a>
            
             <a
-              href="https://discord.gg/dk25zDfk"
+              href="https://discord.gg/tCqWYgQYFH"
               target="_blank"
               rel="noopener noreferrer"
               className="ml-2 inline-block px-4 py-2 bg-white text-[#1e3a8a] font-semibold rounded-full shadow hover:brightness-105 transition"
